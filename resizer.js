@@ -18,17 +18,18 @@
         var startWidth;
         var startHeight;
 
-        var borderWidth = parseInt(getComputedStyle(element).getPropertyValue('border-width'), 10) || 0;
+        var borderRightWidth = parseInt(getComputedStyle(element).getPropertyValue('border-right-width'), 10) || 0;
+        var borderBottomWidth = parseInt(getComputedStyle(element).getPropertyValue('border-bottom-width'), 10) || 0;
 
         element.addEventListener('mousemove', checkResizability, false);
         element.addEventListener('mousedown', beginResize, false);
 
         function checkResizability(e) {
-          if (element.offsetWidth - e.offsetX - borderWidth <= dragableOffset) {
+          if (element.offsetWidth - e.offsetX - borderRightWidth <= dragableOffset) {
             element.style.cursor = 'e-resize';
             resizableX = true;
             resizableY = false;
-          } else if (element.offsetHeight - e.offsetY - borderWidth <= dragableOffset) {
+          } else if (element.offsetHeight - e.offsetY - borderBottomWidth <= dragableOffset) {
             element.style.cursor = 's-resize';
             resizableY = true;
             resizableX = false;
@@ -53,13 +54,13 @@
 
         function doResize(e) {
           if (resizableX) {
-            if(startWidth + e.clientX - startX - minimalWidth >= 0) {
+            if (startWidth + e.clientX - startX - minimalWidth >= 0) {
               element.style.width = (startWidth + e.clientX - startX) + 'px';
             }
           }
 
           if (resizableY) {
-            if(startHeight + e.clientY - startY - minimalHeight >= 0) {
+            if (startHeight + e.clientY - startY - minimalHeight >= 0) {
               element.style.height = (startHeight + e.clientY - startY) + 'px';
             }
           }
