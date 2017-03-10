@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="resizer.js"></script>
+  <title>Resizer Lib</title>
+  <style>
+    body {
+      background: #0A3A4A;
+      color: white;
+      padding: 30px;
+    }
+    
+    #myDiv {
+      background: #33A6B2;
+      border: 4px solid indianred;
+      height: 200px;
+      width: 200px;
+    }
+    
+    #myDiv2 {
+      background: #33A6B2;
+      height: 100px;
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Example 1</h2>
+  <div id="myDiv">
+  </div>
+  
+  <h2>Example 2</h2>
+  <div id="myDiv2">
+  </div>
+
+  <script>
+    (function () {
+      myResizerLibrary.createResizer("myDiv");
+      myResizerLibrary.createResizer("myDiv2");
+    })();
+  </script>
+</body>
+
+</html>
