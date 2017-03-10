@@ -1,4 +1,4 @@
-# resizer-lib
+# myResizerLibrary
 
 ## Features
 
